@@ -252,6 +252,32 @@
             text-align: left;
         }
 
+        .blog-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .blog-cta:hover {
+            background: var(--accent);
+            color: black;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
         .custom-cursor {
             position: fixed;
             width: 12px;
@@ -329,6 +355,12 @@
                         <span>See the Pen <a href="https://codepen.io/Rohansweb-codexamples/pen/GgqwjLw">Particle Sim</a> by Rohansweb-codexamples (<a href="https://codepen.io/Rohansweb-codexamples">@Rohansweb-codexamples</a>) on <a href="https://codepen.io">CodePen</a>.</span>
                     </p>
                 </div>
+
+                <!-- Blog CTA -->
+                <a href="https://rohansweb-codexamples.blogspot.com" target="_blank" class="blog-cta">
+                    <span class="material-symbols-rounded">launch</span>
+                    View Our Blog
+                </a>
             </div>
         </section>
 
@@ -521,7 +553,7 @@
             container.addEventListener('touchmove', handleMove, {passive: true});
 
             function loop() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height); // Change to clear so gradient shows through
+                ctx.clearRect(0, 0, canvas.width, canvas.height); 
                 particles.forEach(p => {
                     const d = Math.hypot(p.x - mx, p.y - my);
                     if(d < 100) p.glow = 1.0;
